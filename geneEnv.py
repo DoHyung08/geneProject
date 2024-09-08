@@ -1,6 +1,6 @@
 import gymnasium as gym
 from gymnasium import Env
-from gymnasium.spaces import Box
+from gymnasium import spaces
 from pig import pig
 import numpy as np
 import random
@@ -10,23 +10,42 @@ class geneEnv(Env):
     def __init__(self,geneNum,generation_popul,episode_len):
         self.generation_popul = generation_popul
         self.geneNum = geneNum
-        self.action_space = []
-        self.observaton_space = []
+
+        action_ranges = [generation_popul] * generation_popul * geneNum
+        observ_ranges = [len(pig.alleleInt)] * generation_popul * geneNum
+        self.action_space = spaces.MultiDiscrete(action_ranges)
+        self.observation_space = spaces.MultiDiscrete(observ_ranges)
         self.state = self.make_generation()
         self.episode_len = episode_len
         
 
-    def reset(self):
+    def reset(self,seed=None):
+        if seed is not None:
+            self.seed(seed)
+        
         self.state = self.make_generation()
+        info = {}
+
+        return self.get_obs(), info
+
+    def seed(self, seed=None):
+        np.random.seed(seed)
+        random.seed(seed)
+
 
     def get_obs(self):
         obs_list = []
-        for pig in self.state:
-            get_gene_list = np.array(pig.genes)
-            obs_list.extend(np.ravel(get_gene_list,order='C'))
+
+        for pigG in self.state:
+            #print("debug",pigG.phenotype)
+            for g in range(self.geneNum):
+                obs_list.append(pigG.phenotype[g])
 
         for i in range(len(obs_list)):
-            obs_list[i] = pig.alleleInt[obs_list[i]]
+
+            obs_list[i] = pig.phenoInt[obs_list[i]]
+
+            #print(self.episode_len, obs_list[i])
         obs_list = np.array([obs_list],dtype=int)
 
         return obs_list
@@ -71,16 +90,15 @@ class geneEnv(Env):
     def make_generation(self):
         ret_genereation = []
 
-        for g in range(self.generation_popul):
+        for i in range(self.generation_popul):
             make_gene = []
-            for i in range(2):
-                make_gene.append(random.choice(pig.alleleList))
-            make_gene = [make_gene]
+            for g in range(self.geneNum):
+                make_one_gene = []
+                for j in range(2):
+                    make_one_gene.append(random.choice(pig.alleleList[g]))
+                make_gene.append(make_one_gene)
+            
             ret_genereation.append(pig(make_gene))
         
         return ret_genereation
         
-
-
-env = geneEnv(1,10,100)
-print(env)

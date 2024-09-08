@@ -29,7 +29,10 @@ class pig:
                             calc = calc + allele
                 except:
                     calc = gene[0]
-            
+                
+            char_list = list(calc)  # 문자열을 리스트로 변환
+            char_list.sort()     # 리스트를 정렬 'BA'와 같은 문제 해결
+            calc = ''.join(char_list)
             self.phenotype.append(calc)
 
 
