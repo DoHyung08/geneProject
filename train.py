@@ -8,11 +8,12 @@ from geneEnv import geneEnv
 
 
 
-env = geneEnv(1,20,100)
+env = geneEnv(1,50,100)
 
 # print(f"Observation space: {env.observation_space}")
 # print(f"Action space: {env.action_space}")
 # print(f"Sample observation: {env.reset()}")
 
 model = PPO("MlpPolicy", env, verbose=1,device='cpu')
-model.learn(total_timesteps=10_000)
+model.learn(total_timesteps=100_0000)
+model.save("trained_model")
