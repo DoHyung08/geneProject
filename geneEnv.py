@@ -46,7 +46,7 @@ class geneEnv(Env):
             obs_list[i] = pig.phenoInt[obs_list[i]]
 
             #print(self.episode_len, obs_list[i])
-        obs_list = np.array([obs_list],dtype=int)
+        obs_list = np.array(obs_list,dtype=int)
 
         return obs_list
 

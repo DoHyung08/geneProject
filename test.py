@@ -18,11 +18,12 @@ def get_obs():
 
     for i in range(len(obs_list)):
         obs_list[i] = pig.phenoInt[obs_list[i]]
-    obs_list = np.array([obs_list],dtype=int)
+    obs_list = np.array(obs_list,dtype=int)
 
     return obs_list
 
 print(get_obs())
+print(get_obs().shape)
 
 #print(random.choice(pig.alleleList))
 
