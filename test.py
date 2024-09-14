@@ -9,21 +9,59 @@ state.append(pig([['O','A']]))
 state.append(pig([['O','O']]))
 
 
-def get_obs():
-    obs_list = []
 
-    for pigG in state:
-        for g in range(1):
-            obs_list.append(pigG.phenotype[g])
 
-    for i in range(len(obs_list)):
-        obs_list[i] = pig.phenoInt[obs_list[i]]
-    obs_list = np.array(obs_list,dtype=int)
+def make_generation():
+    ret_genereation = []
 
-    return obs_list
+    for i in range(4):
+        make_gene = []
+        for g in range(2):
+            make_one_gene = []
+            for j in range(2):
+                make_one_gene.append(random.choice(pig.alleleList[g]))
+            make_gene.append(make_one_gene)
+        
+        ret_genereation.append(pig(make_gene))
+        print(make_gene)
+    
+    return ret_genereation
 
-print(get_obs())
-print(get_obs().shape)
+generation = make_generation()
+
+for ppig in generation:
+    print(ppig.phenotype)
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def get_obs():
+#     obs_list = []
+
+#     for pigG in state:
+#         for g in range(1):
+#             obs_list.append(pigG.phenotype[g])
+
+#     for i in range(len(obs_list)):
+#         obs_list[i] = pig.phenoInt[obs_list[i]]
+#     obs_list = np.array(obs_list,dtype=int)
+
+#     return obs_list
+
+# print(get_obs())
+# print(get_obs().shape)
 
 #print(random.choice(pig.alleleList))
 

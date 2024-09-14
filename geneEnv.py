@@ -75,7 +75,9 @@ class geneEnv(Env):
             for babyPig in nextGen:
                 phenoCnt[pig.phenoInt[babyPig.phenotype[g]]] += 1
             
-            reward -= np.std(phenoCnt)
+            #reward -= np.std(phenoCnt)
+            
+            reward += phenoCnt[0]
             totalPheno.append(phenoCnt)
 
         if self.episode_len <= 0:
