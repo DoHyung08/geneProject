@@ -7,7 +7,7 @@ class pig:
     # alleleInt = {'A':0,'B':1,'O':2}#숫자로 변환하는 딕셔너리
     # phenoInt = {'AB':0,'A':1,'B':2,'O':3}
     
-    phenoPolicy = [{'T':1,'t':2},{'R':1,'r':2}]#우열관계 명시한 표현형 정책
+    phenoPolicy = [{'T':2,'t':1},{'R':2,'r':1}]#우열관계 명시한 표현형 정책
     alleleList = [['T','t'],['R','r']]
     alleleInt = {'T':0,'t':1,'R':2,'r':3}#숫자로 변환하는 딕셔너리
     phenoInt = {'T':0,'t':1,'R':2,'r':3}
