@@ -77,7 +77,10 @@ class geneEnv(Env):
             
             #reward -= np.std(phenoCnt)
             
-            reward += phenoCnt[0]
+            for goals in pig.goalPheno[g]:
+                reward += phenoCnt[goals]
+            
+                
             totalPheno.append(phenoCnt)
 
         if self.episode_len <= 0:
