@@ -89,6 +89,7 @@ class geneEnv(Env):
             done = False
         truncated = False
         info = {}
+        self.state = nextGen
 
         return self.get_obs(), reward, done, truncated, info
         
