@@ -11,7 +11,7 @@ class geneEnv(Env):
         self.generation_popul = generation_popul
         self.geneNum = geneNum
 
-        action_ranges = [generation_popul] * (generation_popul * geneNum)
+        action_ranges = [generation_popul] * (generation_popul)
         observ_ranges = [len(pig.phenoInt)] * (generation_popul * geneNum)
         self.action_space = spaces.MultiDiscrete(action_ranges)
         self.observation_space = spaces.MultiDiscrete(observ_ranges)
