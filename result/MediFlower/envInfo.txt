@@ -1,0 +1,14 @@
+MediFlower
+
+Two intermediate inheritance by three genes
+
+geneEnv(2,32,80)
+
+for goals in pig.goalPheno[g]:
+    reward += phenoCnt[goals]
+
+phenoPolicy = [{'R':1,'W':2}]#우열관계 명시한 표현형 정책
+alleleList = [['R','W']]
+alleleInt = {'R':0,'W':1}#숫자로 변환하는 딕셔너리
+phenoInt = {'R':0,'W':1,'RW':2}
+goalPheno = [[2]]
