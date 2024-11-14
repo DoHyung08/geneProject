@@ -2,7 +2,7 @@ MediFlower2
 
 Two intermediate inheritance by three genes
 
-geneEnv(1,32,120)
+ratioEnv(1,32,120)
 
 n_epochs = 30
 total_timesteps = 1600_000

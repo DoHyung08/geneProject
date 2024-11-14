@@ -17,6 +17,7 @@ class geneEnv(Env):
         self.observation_space = spaces.MultiDiscrete(observ_ranges)
         self.state = self.make_generation()
         self.episode_len = episode_len
+        self.origin_episode_len = episode_len
         
 
     def reset(self,seed=None):
@@ -24,6 +25,7 @@ class geneEnv(Env):
             self.seed(seed)
         
         self.state = self.make_generation()
+        self.episode_len = self.origin_episode_len
         info = {}
 
         return self.get_obs(), info

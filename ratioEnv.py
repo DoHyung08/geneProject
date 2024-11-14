@@ -37,9 +37,10 @@ class ratioEnv(geneEnv):#geneEnv 상속. step만 오버로딩
             phenoRatio = [100 * x / sumCnt for x in phenoCnt]
             
             for i in range(len(pig.phenoInt)):
-                reward -= (phenoRatio[i] - pig.goalRatio[i])**2
+                reward -= (phenoRatio[i] - pig.goalRatio[i])**2 + (phenoRatio[i] - pig.goalRatio[i])
                 
             totalPheno.append(phenoCnt)
+        reward /= self.geneNum * len(pig.phenoInt)
 
         if self.episode_len <= 0:
             done = True

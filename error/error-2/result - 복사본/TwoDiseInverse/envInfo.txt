@@ -1,0 +1,15 @@
+TwoDiseInverse
+
+Two disease by two genes and goal Gene is inferior
+
+geneEnv(2,32,80)
+
+for goals in pig.goalPheno[g]:
+    reward += phenoCnt[goals]
+
+
+phenoPolicy = [{'T':1,'t':2},{'R':1,'r':2}]#우열관계 명시한 표현형 정책
+alleleList = [['T','t'],['R','r']]
+alleleInt = {'T':0,'t':1,'R':2,'r':3}#숫자로 변환하는 딕셔너리
+phenoInt = {'T':0,'t':1,'R':2,'r':3}
+goalPheno = [[1],[3]]

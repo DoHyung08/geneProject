@@ -2,6 +2,9 @@ MediFlower
 
 Two intermediate inheritance by three genes
 
+n_epochs = 20
+total_timesteps = 800_000
+
 geneEnv(2,32,80)
 
 for goals in pig.goalPheno[g]:
