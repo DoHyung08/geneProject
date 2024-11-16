@@ -1,0 +1,6 @@
+pig.phenoPolicy = [{'X':1,'Y':1,'O':2}]#우열관계 명시한 표현형 정책
+pig.alleleList = [['X','Y','O']]
+pig.alleleInt = {'X':0,'Y':1,'O':2}#숫자로 변환하는 딕셔너리
+pig.phenoInt = {'XY':0,'X':1,'Y':2,'O':3}
+pig.goalPheno = [[0,2]]
+print("Gene Environment setting success")

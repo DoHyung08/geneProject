@@ -41,6 +41,9 @@ class ratioEnv(geneEnv):#geneEnv 상속. step만 오버로딩
                 
             totalPheno.append(phenoCnt)
         reward /= self.geneNum * len(pig.phenoInt)
+        
+        if reward > -30:
+            done = True
 
         if self.episode_len <= 0:
             done = True

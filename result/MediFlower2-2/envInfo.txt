@@ -2,11 +2,12 @@ MediFlower2-2
 
 Two intermediate inheritance by three genes
 MSE applied
+stop-earlier by reward
 
-ratioEnv(1,32,80)
+ratioEnv(1,32,5)
 
 n_epochs = 20
-total_timesteps = 800_000 + 400_000 + 400_000
+total_timesteps = 800_000
 
 
 phenoPolicy = [{'R':1,'W':2}]#우열관계 명시한 표현형 정책
@@ -33,3 +34,5 @@ for g in range(self.geneNum):
     totalPheno.append(phenoCnt)
 reward /= self.geneNum * len(pig.phenoInt)
 
+if reward > -30:
+    done = True

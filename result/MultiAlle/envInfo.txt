@@ -1,0 +1,17 @@
+MultiAlle
+
+Multiple allele
+
+n_epochs = 20
+total_timesteps = 800_000
+
+geneEnv(1,32,10)
+
+for goals in pig.goalPheno[g]:
+    reward += phenoCnt[goals]
+
+phenoPolicy = [{'X':1,'Y':1,'O':2}]#우열관계 명시한 표현형 정책
+alleleList = [['X','Y','O']]
+alleleInt = {'X':0,'Y':1,'O':2}#숫자로 변환하는 딕셔너리
+phenoInt = {'XY':0,'X':1,'Y':2,'O':3}
+goalPheno = [[0,2]]
