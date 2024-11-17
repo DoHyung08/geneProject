@@ -4,7 +4,7 @@ Two intermediate inheritance by three genes
 MSE applied
 stop-earlier by reward
 
-ratioEnv(1,32,5)
+ratioEnv(1,32,20)
 
 n_epochs = 20
 total_timesteps = 800_000
