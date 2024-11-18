@@ -1,0 +1,38 @@
+MediFlower2-2
+
+Two intermediate inheritance by three genes
+MSE applied
+stop-earlier by reward
+
+ratioEnv(1,128,20)
+
+n_epochs = 20
+total_timesteps = 800_000
+
+
+phenoPolicy = [{'R':1,'W':1}]#우열관계 명시한 표현형 정책
+alleleList = [['R','W']]
+alleleInt = {'R':0,'W':1}#숫자로 변환하는 딕셔너리
+phenoInt = {'R':0,'W':1,'RW':2}
+goalRatio = [30,60,10]
+
+reward = 0
+totalPheno = []
+for g in range(self.geneNum):
+    phenoCnt = [0 for i in range(len(pig.phenoInt))]
+
+    for babyPig in nextGen:
+        phenoCnt[pig.phenoInt[babyPig.phenotype[g]]] += 1
+    
+    
+    sumCnt = sum(phenoCnt)
+    phenoRatio = [100 * x / sumCnt for x in phenoCnt]
+    
+    for i in range(len(pig.phenoInt)):
+        reward -= (phenoRatio[i] - pig.goalRatio[i])**2 + (phenoRatio[i] - pig.goalRatio[i])//more discount reward by less-appeared phenotypes
+        
+    totalPheno.append(phenoCnt)
+reward /= self.geneNum * len(pig.phenoInt)
+
+if reward > -30:
+    done = True
