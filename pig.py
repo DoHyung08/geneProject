@@ -7,7 +7,7 @@ class pig:
     alleleInt = {}#숫자로 변환하는 딕셔너리
     phenoInt = {}
     goalPheno = []
-    goalRatio = []
+    goalRatio = []#the sum should equal 100 * geneNum
 
     def __init__(self, genes):
         self.genes = genes #n X 2(일반적) list
