@@ -3,7 +3,7 @@ MultiAlle
 Multiple allele
 
 n_epochs = 20
-total_timesteps = 800_000
+total_timesteps = 800_000 + 800_000 + 400_000
 
 geneEnv(1,32,10)
 

@@ -4,6 +4,8 @@ Two disease by two genes and goal Gene is inferior
 
 geneEnv(2,32,5)
 
+2 million timesteps
+
 for goals in pig.goalPheno[g]:
     reward += phenoCnt[goals]
 

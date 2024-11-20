@@ -7,7 +7,7 @@ stop-earlier by reward
 ratioEnv(1,64,20)
 
 n_epochs = 20
-total_timesteps = 
+total_timesteps = 400_000 + 400_000
 
 
 phenoPolicy = [{'T':1,'t':2}]#우열관계 명시한 표현형 정책

@@ -2,6 +2,8 @@ TwoDise
 
 Two disease by two genes
 
+2.8 million timesteps
+
 geneEnv(2,32,5)
 
 for goals in pig.goalPheno[g]:
