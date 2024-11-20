@@ -1,0 +1,6 @@
+pig.phenoPolicy = [{'T':1,'t':2}]#우열관계 명시한 표현형 정책
+pig.alleleList = [['T','t']]
+pig.alleleInt = {'T':0,'t':1}#숫자로 변환하는 딕셔너리
+pig.phenoInt = {'T':0,'t':1}
+pig.goalRatio = [25,75]
+print("Gene Environment setting success")
